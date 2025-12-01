@@ -1,15 +1,8 @@
-# 核心依赖：指定pmdarima稳定版
-streamlit>=1.30.0,<2.0.0
-pandas>=2.0.0,<3.0.0
-numpy>=1.24.0,<2.0.0
-matplotlib>=3.7.0,<4.0.0
-statsmodels>=0.14.0,<0.15.0
-pmdarima==1.8.5  # 选1.8.5
-scipy>=1.10.0,<2.0.0
-Cython>=0.29.36  # 补充pmdarima编译必需的依赖
-
-# 安装配置
---timeout=300  # 超时延长到5分钟
---index-url=https://pypi.tuna.tsinghua.edu.cn/simple
---trusted-host=pypi.tuna.tsinghua.edu.cn
---no-cache-dir  # 禁用缓存，避免旧包干扰
+streamlit==1.50.0
+pandas==2.0.3
+numpy==1.24.3
+matplotlib==3.7.2
+statsmodels==0.14.0
+pmdarima==2.0.3
+scipy==1.11.1
+python-dotenv==1.0.0
