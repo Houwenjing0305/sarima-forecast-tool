@@ -1,13 +1,15 @@
-# 放宽版本限制，让云端选兼容且易安装的版本
-streamlit>=1.30.0,<2.0.0  # 兼容1.30以上，2.0以下，不用死磕1.38.0
-pandas>=2.0.0,<3.0.0       # 同理，避免固定版本导致编译失败
+# 核心依赖：指定pmdarima稳定版
+streamlit>=1.30.0,<2.0.0
+pandas>=2.0.0,<3.0.0
 numpy>=1.24.0,<2.0.0
 matplotlib>=3.7.0,<4.0.0
 statsmodels>=0.14.0,<0.15.0
-pmdarima>=2.0.0,<3.0.0
+pmdarima==1.8.5  # 选1.8.5
 scipy>=1.10.0,<2.0.0
+Cython>=0.29.36  # 补充pmdarima编译必需的依赖
 
 # 安装配置
---timeout=120  # 超时时间从默认15秒改成120秒，避免下载慢超时
---index-url=https://pypi.tuna.tsinghua.edu.cn/simple  # 清华镜像源，国内下载速度飞快
---trusted-host=pypi.tuna.tsinghua.edu.cn  # 信任镜像源
+--timeout=300  # 超时延长到5分钟
+--index-url=https://pypi.tuna.tsinghua.edu.cn/simple
+--trusted-host=pypi.tuna.tsinghua.edu.cn
+--no-cache-dir  # 禁用缓存，避免旧包干扰
